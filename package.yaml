@@ -1,6 +1,6 @@
 # Package definition for yq
 
-package_name: yq
+package_name: yq-go
 github_repo: mikefarah/yq
 artifact_format: tar.gz
 description: "A lightweight and portable command-line YAML, JSON and XML processor"

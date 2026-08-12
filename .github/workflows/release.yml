@@ -1,10 +1,10 @@
-name: Build yq for Debian
+name: Build yq-go for Debian
 
 on:
   workflow_dispatch:
     inputs:
       version:
-        description: The version of yq to build
+        description: The version of yq-go to build
         type: string
         required: true
       build_version:
@@ -41,7 +41,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build yq
+      - name: Build yq-go
         uses: ranjithrajv/debian-multiarch-builder@v.0.1a8
         env:
           # Authenticate GitHub API calls from the builder; anonymous calls
@@ -58,8 +58,8 @@ jobs:
       - name: Upload packages
         uses: actions/upload-artifact@v4
         with:
-          name: yq-debian-packages
-          path: yq_*.deb
+          name: yq-go-debian-packages
+          path: yq-go_*.deb
           if-no-files-found: error
 
   release:
@@ -71,7 +71,7 @@ jobs:
       - name: Download packages
         uses: actions/download-artifact@v4
         with:
-          name: yq-debian-packages
+          name: yq-go-debian-packages
 
       - name: Publish draft release
         uses: softprops/action-gh-release@v2
@@ -79,5 +79,5 @@ jobs:
           draft: true
           tag_name: ${{ inputs.version }}+${{ inputs.build_version }}
           name: ${{ inputs.version }}+${{ inputs.build_version }}
-          files: yq_*.deb
+          files: yq-go_*.deb
           fail_on_unmatched_files: true
