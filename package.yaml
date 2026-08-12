@@ -1,0 +1,8 @@
+# Package definition for yq
+
+package_name: yq
+github_repo: mikefarah/yq
+artifact_format: tar.gz
+description: "A lightweight and portable command-line YAML, JSON and XML processor"
+
+# Build for all Debian suites and all supported architectures.
