@@ -25,6 +25,7 @@ on:
           - 'ppc64el'
           - 's390x'
           - 'riscv64'
+          - 'loong64'
       enable_lintian:
         description: Enable lintian validation
         type: boolean
