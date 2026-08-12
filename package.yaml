@@ -5,4 +5,10 @@ github_repo: mikefarah/yq
 artifact_format: tar.gz
 description: "A lightweight and portable command-line YAML, JSON and XML processor"
 
+# mikefarah/yq embeds the OS/arch suffix directly in the binary's own
+# filename inside each release tarball (e.g. "yq_linux_amd64",
+# "yq_linux_loong64"), not a plain "yq" - rename it to the expected
+# command name after install.
+binary_rename: yq
+
 # Build for all Debian suites and all supported architectures.
