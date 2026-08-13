@@ -2,6 +2,7 @@
 
 package_name: yq-go
 github_repo: mikefarah/yq
+license: MIT
 artifact_format: tar.gz
 description: "A lightweight and portable command-line YAML, JSON and XML processor"
 
