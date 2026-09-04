@@ -5,6 +5,7 @@ github_repo: mikefarah/yq
 license: MIT
 artifact_format: tar.gz
 description: "A lightweight and portable command-line YAML, JSON and XML processor"
+license: MIT
 
 # mikefarah/yq embeds the OS/arch suffix directly in the binary's own
 # filename inside each release tarball (e.g. "yq_linux_amd64",
