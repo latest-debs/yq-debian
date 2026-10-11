@@ -23,6 +23,14 @@ binary_rename: yq
 # parses scalar values, so a block list would read back empty.
 smoke_skip: "install-man-page.sh"
 
+# The command this package is expected to provide. package_name is the
+# *package* name and is not the same thing - it is yq-go, to avoid
+# colliding with Debian's unrelated Python `yq`. The smoke gate otherwise
+# only checks that some binary in /usr/bin reports the right version, which
+# stayed green while the package shipped as /usr/bin/yq_linux_amd64 and
+# nobody had a working `yq`.
+smoke_binary: "yq"
+
 # Opt into native Ubuntu builds (builder >= v.0.1a29). Packages without
 # these are served from the Debian suites via the alias fallback.
 ubuntu_distributions:
