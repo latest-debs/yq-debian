@@ -207,7 +207,7 @@ jobs:
           restore-keys: apt-${{ runner.os }}-
 
       - name: Build yq-go
-        uses: ranjithrajv/debian-multiarch-builder@8182827979bfcab0a888716800e0194f9cb33ac2 # v.0.1a36 - binary_rename targets the ELF
+        uses: ranjithrajv/debian-multiarch-builder@f5309543b79f39e0e6f173691f86f16a18f1f544 # TEMP: old builder, to prove the gate catches it
         env:
           # Authenticate GitHub API calls from the builder; anonymous calls
           # from shared runner IPs are rate-limited (60/h) and caused
