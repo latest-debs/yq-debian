@@ -15,6 +15,14 @@ binary_rename: yq
 
 # Build for all Debian suites and all supported architectures.
 
+# Binaries that must not be smoke-tested with --version (not standalone CLIs).
+# mikefarah/yq >= 4.54 ships install-man-page.sh in the release tarball
+# alongside yq_linux_* and yq.1; the builder places it in /usr/bin next to
+# yq, and it is a helper script that reports no version, so the smoke gate
+# has to waive it. Kept as a same-line scalar: this repo's read_val only
+# parses scalar values, so a block list would read back empty.
+smoke_skip: "install-man-page.sh"
+
 # Opt into native Ubuntu builds (builder >= v.0.1a29). Packages without
 # these are served from the Debian suites via the alias fallback.
 ubuntu_distributions:
